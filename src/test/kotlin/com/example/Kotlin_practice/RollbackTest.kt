@@ -24,6 +24,11 @@ class RollbackTest {
         rollbackRepository.deleteAll()
     }
 
+    /*
+    * 코틀린에서도 checked exception은 기본적으로 롤백이 되지 않으며, 롤백을 시키려면 rollbackFor을 지정해야 함
+    *
+    * */
+
     @Test
     fun `RuntimeException 발생 시 트랜잭션은 롤백된다`() {
         assertThrows<RuntimeException> {
